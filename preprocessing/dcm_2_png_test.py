@@ -9,11 +9,11 @@ import pydicom
 import json
 
 
-with open("../SETTINGS.json") as f:
+with open("/content/kaggle_rsna_pneumonia_dancingbears/SETTINGS.json") as f:
     SETTINGS = json.load(f)
 
-SRC_PATH = os.path.join("../", SETTINGS["TEST_RAW_DATA_DIR"])
-DST_PATH  = os.path.join("../", SETTINGS["TEST_CLEAN_DATA_DIR"])
+SRC_PATH = os.path.join("/content/stage_2_test_images", SETTINGS["TEST_RAW_DATA_DIR"])
+DST_PATH  = os.path.join("/content/stage_2_test_images_png", SETTINGS["TEST_CLEAN_DATA_DIR"])
 
 
 def convert(patientId, src_path=SRC_PATH, dst_path=DST_PATH):
